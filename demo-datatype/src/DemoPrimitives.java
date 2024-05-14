@@ -106,7 +106,7 @@ public class DemoPrimitives {
     double d11 = 99.99d;//same as double d12 = 99.99;
 
     //Local variable(within the main program(which is within the {}), you can only declare the same variable once)
-    doube d12; //variable declaration, can not assign value first
+    double d12; //variable declaration, can not assign value first
     d12 = 10.9;//value assignment
 
     double d13 = 14.3;//declaration and assignment

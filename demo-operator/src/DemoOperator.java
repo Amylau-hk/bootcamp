@@ -5,17 +5,17 @@ public class DemoOperator{
     x = x + 1;//4
     System.out.println(x);//String + int -> string
 
-    x++; //same as x + 1
-    System.out.println("x=" + x);//System.out.println("") represent String(text)
+    x++; //same as x + 1;
+    System.out.println("x=" + x);//5 //System.out.println("") represent String(text)
 
     x += 1;//same as x = x + 1;
-    System.out.println("x=" + x);
+    System.out.println("x=" + x);//6
 
-    x +=2;//same as x = x +2
-    System.out.println("x=" + x);
+    x +=2;//same as x = x +2;
+    System.out.println("x=" + x);//8
 
-    ++x;//same as x = x + 1
-    System.out.println("x=" + x);
+    ++x;//same as x = x + 1;
+    System.out.println("x=" + x);//9
 
     int y = 4;
 
@@ -33,9 +33,9 @@ public class DemoOperator{
 
     //*=, /=
     int p = 4;
-    p = p * 2;
-    p *= 2;
-    p /= 4;
+    p = p * 2;//8
+    p *= 2;//16
+    p /= 4;//4
     System.out.println("p=" + p);//4
 
     //%=
@@ -59,7 +59,7 @@ public class DemoOperator{
     boolean r4 = -9 <= 9;//true
     System.out.println("r1=" + r1);
 
-    // and (&&), (||)
+    // and (&&), or (||)
     boolean r5 = 10 > 3 && 20 >= 20;//true AND true ->true
     boolean r6 = 10 >3 && 4 < 4;//ture AND false -> false
 
@@ -73,6 +73,22 @@ public class DemoOperator{
     boolean r11 = 'C' != '0';//true, ask if a value is NOT equal to another value, we use "!="
 
     boolean r12 = 10 / 2 > 5 * 3;//false
+
+
+    int n = 3;
+    int result = n++ * 3;// origianl n mutiply 3 first, assign 9 to result, then n = n + 1;
+    System.out.println(result);//9
+    System.out.println(n);//4
+
+    int m = 4;
+    int result2 = ++m * 5;// m = m + 1 first, the mutiply 5, assign 25 to result 2
+    System.out.println(result2);//25
+    System.out.println(m);//5
+
+    int k = 4;
+    int result3= k++ * 7 * ++k;// 168 = (4 * 7) * 6
+    System.out.println(result3);
+
 
     }
 

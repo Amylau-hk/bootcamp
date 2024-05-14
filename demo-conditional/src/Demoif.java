@@ -7,7 +7,7 @@ public class Demoif{
 
     }
     int y = 2;
-    //print "y >= 3" pr "Y < 3"
+    //print "y >= 3" or "Y < 3"
     if (y>= 3) {
       System.out.println("y >= 3");
     } else {
