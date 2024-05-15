@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class DemoSwitch {
   public static void main(String[] args) {
     char grade = 'B';
@@ -34,6 +36,12 @@ public class DemoSwitch {
       x += 10;
     }
     System.out.println("x=" + x);//30
+
+    // Scanner
+    Scanner input = new Scanner(System.in);
+    System.out.print("Please input a number: ");
+    int month = input.nextInt();//line of input -> int
+    System.out.println("month= " + month);
   }
   
 }
