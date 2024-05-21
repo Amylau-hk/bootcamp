@@ -59,6 +59,7 @@ public class Demoloop {
       if (i % 2 == 0){ // % 2 is to find the even number
         sum2 += i;
       }
+      
     }
     System.out.println("sum2=" + sum2);
 
@@ -71,6 +72,7 @@ public class Demoloop {
         System.out.println(i);
       } 
     }
+    
 
     // break
     for (int i = 0; i < 10; i++) {

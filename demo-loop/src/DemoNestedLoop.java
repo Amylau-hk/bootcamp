@@ -42,6 +42,12 @@ public class DemoNestedLoop {
     //Exercise
     //1-20
     //1 3 5 7 9 12 14 16 18 20
+    for (int i = 1; i < 21; i++){
+      if (i % 2 ==1 && i < 10 || i % 2 == 0 && i >10) {
+        System.out.println(i + " ");
+      }
+    }
+
 
     //Searching
     String s = "Vincent Book Game Laptop";
