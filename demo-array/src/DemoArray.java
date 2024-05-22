@@ -4,7 +4,7 @@ public class DemoArray {
     public static void main(String[] args) throws Exception {
         int x1 = 10;
         int x2 = 20;
-        int x3 = -3;
+        int x3 = -3; // -3 -> int value, while x 3 -> variable
 
         //When you create an array object, you have to define the length of it
         int[] arr = new int[3]; // stores in value only, and the length = 3
@@ -99,11 +99,52 @@ public class DemoArray {
         }
         System.out.println("Reverse char[] = " + s1);
         //4. Given 2 char[], result -> append all character to a String value
-        char[] c1 = new char[]{'o', 'a', 'k'};
-        char[] c2 = new char[]{'a', 'b', 'f'};
-        //4a. result -> "oakabf"
+        char[] c1 = new char[]{'o', 'a', 'k', 'p'};
+        char[] c2 = new char[]{'a', 'b', 'f', 't'};
+        //4a. result -> "oakpabft"
+        //Method 1
+        String s2 = "";
+        for (int i = 0; i < c1.length; i++){
+            s2 += c1[i];
+        }
+        for (int j = 0; j < c2.length; j++){
+            s2 += c2[j];
+        }
+        System.out.println("char[] = " + s2);
         //4b. result -> "obkt". when even index, get the value from c1, when odd index, get the value from c2
+        String s3 = "";
 
+        int length = c1.length > c2.length ? c1.length : c2.length;
+        if (c1.length > c2.length){
+            length = c1.length;
+        } else {
+            length = c2.length;
+        }
+
+        for (int i = 0; i < length; i++){
+            if (i % 2 == 0) {
+                s3 += c1[i];
+            } else {
+                s3 += c2[i];
+            }
+            }
+            System.out.println(s3);
+
+            //4c. result -> "obkta"
+            char[] c3 = new char[]{'o', 'a', 'k', 'p', 'a', 'b'};
+            char[] c4 = new char[]{'a', 'b', 'f', 't'};
+            String s4 = "";
+            int length2 = c3.length > c4.length ? c3.length : c3.length;
+
+            for (int i = 0; i < length2; i++){
+                if (i % 2 == 0 && i < c3.length){
+                    s4 += c3[i];
+                } else if (i % 2 == 1 && i < c4.length) {
+                    s4 += c4[i];
+                }
+            }
+            System.out.println(s4);
+        
 
     }
 }

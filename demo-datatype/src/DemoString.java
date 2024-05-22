@@ -1,3 +1,5 @@
+import javax.swing.plaf.synth.SynthSplitPaneUI;
+
 public class DemoString {
   public static void main(String[] args) {
     //String stores text
@@ -119,6 +121,7 @@ public class DemoString {
       System.out.println("yes");
     }// easier for maintain
 
+    //chain method
     System.out.println(x3.substring(0, 3).length());//3
     System.out.println(x3.substring(0, 3).charAt(1));// 'e'
 
@@ -130,7 +133,63 @@ public class DemoString {
    // charAt()
    if (x3.charAt(0) == 'w' && x3.charAt(1) == 'e' && x3.charAt(2) == 'l'){
     System.out.println("yes");
-   }// not perfer for maintainace
+   }// not perfer for maintenace
+
+   // isEmpty()
+   // Empty String value -> ""
+   String x7 = "";
+   System.out.println(x7.isEmpty()); // true
+   String x8 = "abc";
+   System.out.println(x8.isEmpty()); // false
+
+   System.out.println(x7.length() == 0); //true
+
+   // isBlank()
+   String x9 = "";
+   System.out.println(x9.isBlank()); //true
+   x9 = " ";
+   System.out.println(x9.isBlank()); //true
+   System.out.println(x9.isEmpty()); //false
+
+   // substring(0, 3)
+   //substring(0)
+   String s10 = "hello";
+   System.out.println(s10.substring(0)); // hello, from index 0 to the end.
+   System.out.println(s10.substring(0, 3)); //hel, from index 0 to the index 2 (3-1)
+
+   // hello -> HELLO
+   System.out.println(s10.toUpperCase()); // "HELLO"
+   String s11 = "Hello";
+   System.out.println(s11.toLowerCase()); // "hello"
+
+   System.out.println(s10.replace('l', 'x')); // hexxo
+   System.out.println(s10.replace("ll", "yyy")); // heyyyo
+   // replace item number can be more than the original
+
+   System.out.println(s10.replace("lll", "abc")); // hello
+
+   System.out.println(s10.contains("ell")); //true
+
+   // startsWith()
+   System.out.println(s10.startsWith("he")); //true
+   // endsWith()
+   System.out.println(s10.endsWith("o")); //true
+
+   // trim(), removing the space characters at the head/tail of the String.
+   String s12 = "    Hello,  bootcamp  !!!    ";
+   System.out.println(s12.trim()); // Hello,  bootcamp  !!!
+
+   String[] strings = new String[] {"hello", "abcijk", "vincent", "HELLO", "..HELLO..."};
+   // how many strings contains "ELL", but ignore case
+   //"eLL" or "ell" or "ELL"
+   int count = 0;
+   for (int i = 0; i < strings.length; i++){
+    if (strings[i].toUpperCase().contains("ELL")){
+      count++;
+    }
+   }
+   System.out.println("Strings count=" + count);
+
   }
   
 }
