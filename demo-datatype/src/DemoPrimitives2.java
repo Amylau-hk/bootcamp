@@ -27,6 +27,7 @@ public class DemoPrimitives2 {
     short s1 = 128;
     byte b2 = (byte) s1; // Java doesnt know s1 is 128 during compile time
     System.out.println("b2=" + b2); //-128 -> overflow
+    //因為最大係127, 所以overflow既時候會去返最尾, like circle
 
     byte b3 = 127;
     short s2 = b3; // no risk
