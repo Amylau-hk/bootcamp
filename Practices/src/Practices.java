@@ -20,6 +20,8 @@ public class Practices{
                   System.out.print(i + " ");
               }
             }
+
+            int x = 0.9;
     
   }
 }
