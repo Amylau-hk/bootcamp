@@ -9,7 +9,7 @@ public class JavaQuest5 {
  // Count the target of character in a String.
  public static void main(String[] args) {
    String str = "Welcome to the coding bootcamp."; // You should not change this line
-   char target = 'z'; // Update this target to test the logic
+   char target = 'c'; // Update this target to test the logic
 
    // Use a loop to count the target of character in a String.
    int count = 0;
