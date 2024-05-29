@@ -19,6 +19,14 @@ public class DemoMethod {
 
         System.out.println(isSubstring("hello", "ll")); //true
 
+        // circle Area
+        System.out.println(circleArea(3)); // 28.274333882308138
+
+        // double * double
+        // BigDecimal (solution)
+        System.out.println(0.2 * 0.1); // 0.020000000000000004, 出現左精度問題, 當declare 就會唔準
+        
+
     }
 
     // public static int(which is the type you want to show) sum(Name)(參數)
@@ -92,6 +100,7 @@ public class DemoMethod {
 
 // Java -> PI
     public static double circleArea(int radius){
+        return radius * radius * Math.PI; // int * int * double -> double (2 * 2 * 2.0 -> 8.0)
 
     }
 }

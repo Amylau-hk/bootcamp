@@ -143,8 +143,95 @@ public class DemoArray {
                     s4 += c4[i];
                 }
             }
-            System.out.println(s4);
+            System.out.println(s4); //obkta
+
+            //average
+            int[] arr6 = new int[] {4, 8, 4};
+            int sum = 0;
+            int count2 = 0;
+            for (int i = 0; i < arr6.length; i++){
+              sum += arr6[i];
+              count2++;
+            }
+            System.out.println(sum/count2);
+
+            //swaping in array
+            //排序
+            int[] arr7 = new int[] {6, 10, -4, 15};
+            //swap -4 and 6 -> {-4, 10, 6, 15}
+            //backup the data in an new area
+            int temp = arr7[2];
+            //replace the swap number
+            arr7[2] = arr7[0];
+            //replace the rest number by backup
+            arr7[0] = temp;
+            System.out.println(Arrays.toString(arr7)); // [-4, 10, 6, 15]
         
+
+            // Level 1:
+            // arr7 -> [-4, 10, 6, 15]
+            // move -4 to the tail of the array
+            // result [10, 6, 15, -4]
+
+            int t = -1;
+            for (int i = 0; i < arr7.length - 1; i++){
+                t = arr7[i];
+                arr7[i] = arr7[i + 1];
+                arr7[i + 1] = t;
+            }
+             System.out.println(Arrays.toString(arr7)); // [10, 6, 15, -4]
+
+             // Level 2:
+             // Move the max element to the tail
+             // Now: [10, 6, 15, -4]
+             // result [10, 6, -4, 15]
+
+             // 1st round: [6, 10, 15, -4]
+             // 2nd round: [6, 10, 15, -4]
+             // 3rd round: [6, 10, -4, 15]
+
+             for (int i = 0; i < arr7.length - 1; i++){
+                if (arr7[i] > arr7[i + 1]) {
+                    // swap
+                    t = arr7[i];
+                    arr7[i] = arr7[i + 1];
+                    arr7[i + 1] = t;
+                }
+             }
+              System.out.println(Arrays.toString(arr7));
+
+            //Level 3
+            // Sorting -> [-4, 6, 10, 15]
+            // for loop
+            // nested loop
+         //for () {
+           // for () {
+
+           // }
+        // }
+
+
+         // Swap char value
+         String str = "hello"; // swap e and o -> holle
+         // convert char[]
+         // for loop + charAt()
+
+         char t2 = ' ';
+         // Method 1
+         char[] arr8 = new char[str.length()];
+         for (int i = 0; i < str.length(); i++){
+            arr8[i] = str.charAt(i);
+         }
+         // Alternative
+         // arr8 = str.toCharArray(); // ['h', 'e', 'l', 'l', 'o'], only replace for loop
+         // or
+         // char[] arr8 = str.toCharArray(); // replace declear char[]  and for loop
+         
+         t2 = arr8[1];
+         arr8[1] = arr8[4];
+         arr8[4] = t2;
+         str = String.valueOf(arr8); // assign a new String value to variable s
+         System.out.println(str); // holle
 
     }
 }
