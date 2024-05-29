@@ -190,6 +190,45 @@ public class DemoString {
    }
    System.out.println("Strings count=" + count);
 
+   // equal but ignore case
+   count = 0;
+   for (int i = 0; i < strings.length; i++){
+    if (strings[i].trim().equalsIgnoreCase("hello")){
+     System.out.println(strings[i]);
+    }
+   }
+
+   // 
+   String s13 = "helloll";
+   System.out.println(s13.indexOf("ll")); // 2, first pattern
+   System.out.println(s13.indexOf('e')); // 1
+   System.out.println(s13.indexOf('l')); //2, first character of 'l'
+   System.out.println(s13.indexOf("ll", 4)); // 5
+   System.out.println(s13.indexOf("ll", 6)); // -1
+   System.out.println(s13.indexOf(101)); // 1, downgrade to char, ascii 'e' -> 101
+
+   System.out.println(s13.lastIndexOf("ll")); // 5, the last occurence of the pattern
+   System.out.println(s13.lastIndexOf('e')); // 1
+
+   String s14 = "abc";
+   s14 += "def";
+   System.out.println(s14); // abcdef
+
+   String s15 = "abc";
+   s15 = s15.concat("def"); // better performance
+   System.out.println(s15); // abcdef
+
+   String s16 = "abc";
+   String s17 = "abc";
+
+   System.out.println(s16.compareTo(s17)); // 0, the value of s14 = the value of s15
+   System.out.println(s16.equals(s17)); // true
+   System.out.println(s16 == s17); // true ??!! comparing the string object address
+   
+
+
+
+
   }
   
 }
