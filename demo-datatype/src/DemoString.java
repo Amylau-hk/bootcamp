@@ -224,6 +224,8 @@ public class DemoString {
    System.out.println(s16.compareTo(s17)); // 0, the value of s14 = the value of s15
    System.out.println(s16.equals(s17)); // true
    System.out.println(s16 == s17); // true ??!! comparing the string object address
+
+
    
 
 

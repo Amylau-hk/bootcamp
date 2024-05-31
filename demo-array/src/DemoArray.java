@@ -198,22 +198,19 @@ public class DemoArray {
                     arr7[i + 1] = t;
                 }
              }
-              System.out.println(Arrays.toString(arr7));
+              System.out.println(Arrays.toString(arr7)); // [6, 10, -4, 15]
 
             //Level 3
             // Sorting -> [-4, 6, 10, 15]
+            // Bubble sort
             // for loop
             // nested loop
-            int t1 = 0;
          for (int i = 0; i < arr7.length - 1; i++) {
-            for (int j = 0; j < arr7.length - 2; j++) {
-                if (arr7[i] > arr7[j] && arr7[i + 1] > arr7[j + 1]) {
-                    t = arr7[i];
-                    arr7[i] = arr7[i + 1];
-                    arr7[i + 1] = t;
-                    t1 = arr7[j];
+            for (int j = 0; j < arr7.length - i - 1; j++) {
+                if (arr7[j] > arr7[j + 1]) {
+                    t = arr7[j];
                     arr7[j] = arr7[j + 1];
-                    arr7[j + 1] = t1;
+                    arr7[j + 1] = t;
                 }
 
             }
