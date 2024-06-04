@@ -23,16 +23,8 @@ public class Calculator {
     return this.Y;
   }
 
-  public void setSum(int sum) {
-    this.sum = sum;
-  }
-
   public int getSum() {
     return this.X + this.Y;
-  }
-
-  public void setMultiply(int multiply) {
-    this.multiply = multiply;
   }
 
   public int getMultiply() {
@@ -53,8 +45,10 @@ public class Calculator {
     Calculator c1 = new Calculator();
     c1.setX(2);
     c1.setY(3);
-    c1.sum(); // 2+3
-    c1.multiply(); // 2*3
+    c1.getSum(); // 2+3
+    c1.getMultiply(); // 2*3
+    System.out.println(c1.getSum());
+    System.out.println(c1.getMultiply());
   }
 
 
