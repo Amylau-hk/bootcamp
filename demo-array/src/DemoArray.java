@@ -212,7 +212,6 @@ public class DemoArray {
                     arr7[j] = arr7[j + 1];
                     arr7[j + 1] = t;
                 }
-
             }
          }
          System.out.println(Arrays.toString(arr7));
