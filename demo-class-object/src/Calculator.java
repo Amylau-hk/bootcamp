@@ -2,8 +2,6 @@ public class Calculator {
  
   // static method -> instance method???
   
-  private int sum;
-  private int multiply;
   private int X;
   private int Y;
 
@@ -38,6 +36,7 @@ public class Calculator {
   public static void main(String[] args) {
     
     // sysout
+    // static methods
     sum(1, 3); // 4
     Calculator.sum(2, 3); // 5
 
