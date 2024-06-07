@@ -18,6 +18,15 @@ public class TestCat {
 
     Cat c3 = new Cat();
     System.out.println(c3.getAge()); // 0, because primitive type has default value
-  }
+
+
+    Ball b = new Ball();
+    // "Ball b" -> because Ball.class is "public class"
+    // "new Ball()" -> because the constructor is "public"
+
+    b.setColor("YELLOW"); //because setColor method is "public" method
+    
+   }
+
   
 }
