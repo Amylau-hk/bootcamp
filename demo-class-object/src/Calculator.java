@@ -94,6 +94,25 @@ public class Calculator {
     Calculator.test2(new String[] {"abc", "ijk"});
     Calculator.test2("abc", "ijk");
 
+
+    // Static
+    Calculator.sum(3, 2); // 5, static method
+    // new Calculator().setX(3); // no object reference/address, therefore cant setY in the same row
+
+    Calculator x = new Calculator();
+    x.setX(3); // instance method
+    x.setY(2); // instance method
+    System.out.println(x.getSum()); //5
+
+    System.out.println(x.sum(3, 2)); // call static method
+    // object reference is able to call static method
+
+    // Calculator.sum(); // instance method cannot be called by Class Name
+    
+    // static method can be called by instance (object) or Class Name
+    // Instance method can be called by instance (object) ONLY
+
+
   }
 
 

@@ -16,6 +16,10 @@ public class Address {
     return this.line1;
   }
 
+  public void setLine2(String line2) {
+    this.line2 = line2;
+  }
+
   public String Line2() {
     return this.line2;
   }
@@ -31,8 +35,34 @@ public class Address {
 
   public static void main(String[] args) {
     // Create a Form Object, with Address object
-    Address a1 = new Address("Flat 101", "Happy house", "Hong Kong");
-    Form f1 = new Form("Amy", "Lau", a1);
-    System.out.println(f1.toString());
+    Address address = new Address("Flat 101", "Happy house", "Hong Kong");
+    Form form = new Form("Amy", "Lau", address);
+    System.out.println(form.toString());
+    // Form.class -> toString()
+    // address果個位會變左做object address
+
+    System.out.println(form); // println() call form.toString()
+    // Form.class & Address.class -> toString()
+    // Form(Frist name = AmyLast Name = LauAddress = Flat 101Happy houseHong Kong)
+
+    System.out.println(form.getAddress()); // call Address object toString()
+    // Flat 101Happy houseHong Kong
+
+    System.out.println(form.getAddress().line2);
+
+   Form form2 = new Form("Jenny", "Wong", address); // should use new address if do not wanna to change the original one
+   // Form form2 = new Form("Jenny", "Wong", new Address("abc", "def", "hij")); 
+
+    System.out.println(form2.getAddress().line2);
+
+    form.getAddress().setLine2("xyz");
+    System.out.println(form.getAddress().line2); // xyz
+
+    System.out.println(form2.getAddress().line2); // xyz
+
+    // Why both form address and form2 address was changed to xyz?
+    // form.getAddress().setLine2("xyz");
+    // this is changing the line2 without open a new object
+
   }
 }
