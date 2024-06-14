@@ -77,8 +77,9 @@ public class Box {
 
     System.out.println(box.prefix); // apple
 
-    Box name = new Box();
-    name
+    Box box2 = new Box();
+    box2.setName("vincent");
+    System.out.println(box2.getName());
 
 
   }

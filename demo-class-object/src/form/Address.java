@@ -48,7 +48,8 @@ public class Address {
     System.out.println(form.getAddress()); // call Address object toString()
     // Flat 101Happy houseHong Kong
 
-    System.out.println(form.getAddress().line2);
+    System.out.println(form.getAddress().line2); // private variable, can called in the origainal class ONLY
+    System.out.println(form.getAddress().Line2()); // method, can called in other Class
 
    Form form2 = new Form("Jenny", "Wong", address); // should use new address if do not wanna to change the original one
    // Form form2 = new Form("Jenny", "Wong", new Address("abc", "def", "hij")); 
