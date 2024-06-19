@@ -24,5 +24,22 @@ public class Deck {
     public Card[] getCards() {
       return this.cards;
     }
+
+    public void shuffle(int times) {
+      ShuffleManager sm = new ShuffleManager(getCards());
+      sm.shuffle(times);
+      this.cards = sm.getCards();
+    }
+  
+    public static void main(String[] args) {
+      Deck deck = new Deck();
+      deck.shuffle(100);
+      System.out.println("Card[] after shuffle():");
+      for (Card card : deck.getCards()) {
+        System.out.println(card);
+      }
+  
+      Deck.test();
+    }
   }
 
