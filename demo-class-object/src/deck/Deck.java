@@ -4,6 +4,9 @@ public class Deck {
   private static String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
   private static String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
 
+  // "static" belongs to class, not object
+
+
   // Player, Deck, Card
 
   public static int length = suits.length * ranks.length;
@@ -19,6 +22,13 @@ public class Deck {
       }
     }
   }
+
+  public static void test() {
+    System.out.println("hello");
+    Deck d = new Deck();
+    d.getCards();
+  }
+  // cannot use "this", as it is a static method, need to point out which object is calling at.
 
 
     public Card[] getCards() {
@@ -39,7 +49,7 @@ public class Deck {
         System.out.println(card);
       }
   
-      Deck.test();
+      Deck.test(); 
     }
   }
 

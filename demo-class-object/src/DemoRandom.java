@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class DemoRandom {
 
   private int baseSalary = 6000;
@@ -17,6 +19,8 @@ public class DemoRandom {
     System.out.println(random3);
 
     // 49 or 50
+    int random4 = new Random().nextInt(2) + 49;
+    System.out.println(random4);
 
     DemoRandom dr = new DemoRandom();
     System.out.println(dr.sum(2, 3)); // 5

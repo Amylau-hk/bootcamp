@@ -6,9 +6,9 @@ public class DemoBlock {
 
   // static block
   // 1. triggered once only, no matter the number of static variable(s).
-  // 
+  // 一定會路過, even 沒有static variable
   static {
-    System.out.println("start static block.");
+    System.out.println("start static block."); // happen before the main 
     number = 3;
     System.out.println("end static block.");
   }
@@ -26,7 +26,8 @@ public class DemoBlock {
   // 1. it is triggered when there is new object created
   // 2. it is triggered before constructor
   // 3. Usage: common logic between constructors
-  {
+
+  { // instance block: without static
     System.out.println("start instance block.");
     this.name = "John";
     System.out.println("end instance block.");

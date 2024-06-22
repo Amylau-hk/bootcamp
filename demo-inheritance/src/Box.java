@@ -15,6 +15,7 @@ public class Box { // similar to StringBuilder
   public String toString() {
     return this.x;
   }
+ 
 
   public static void main(String[] args) {
     StringBuilder sb = new StringBuilder();
