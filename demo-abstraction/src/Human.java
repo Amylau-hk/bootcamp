@@ -3,6 +3,7 @@ public class Human extends SuperHuman implements Walkable, Readable{
   // Class can only inherit instance methods, instance variables.
   // Constructor CANNOT be inherited.
 
+  // Parent class should have the same empty constructor if child class need
   public Human() {
 
   }

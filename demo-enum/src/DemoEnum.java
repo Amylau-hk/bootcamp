@@ -25,5 +25,10 @@ public class DemoEnum{
     // Other Example?
     // NORTH, WEST, EAST, SOUTH
 
+    Direction d = Direction.EAST;
+    if (d == Direction.SOUTH) { // compare object address directly
+
+    }
+
   }
 }

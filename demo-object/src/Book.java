@@ -3,6 +3,7 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
+// public class Book extends Object { }
 public class Book { // implicitly inherit Object.class
   private String author;
   private LocalDate publishDate;
@@ -57,7 +58,8 @@ public class Book { // implicitly inherit Object.class
     Book b3 = new Book("John", LocalDate.of(2000, 12, 13));
     System.out.println(b3.hashCode()); // 75848451
 
-    System.out.println(b1 == b2); // false
+    System.out.println(b1 == b2); // false, checking object address
+    // as it is new Book of b1 and b2, therefore, it is not the same object
 
     // Beacuse b1 & b2 are different objects
     System.out.println(System.identityHashCode(b1)); // 1933863327
@@ -69,13 +71,13 @@ public class Book { // implicitly inherit Object.class
     System.out.println(b1.equals(b2)); // true, after @Override
     System.out.println(b1.equals(b3)); // false, after @Override
 
-    // if both objects are located in different address, equals() must return
-    // false (No override)
+    // if both objects are located in different address, equals() must return false (No override)
     System.out.println(b1.equals(new Cat())); // false
 
     String str = "abc";
     System.out.println(str.hashCode()); // 96354
     System.out.println(97 * (int) Math.pow(31, 2) + 98 * 31 + 99); // 96354
+    // asscii code calculation = hashCode
 
     // Implication:
     // there will be another string value with same hash code.
@@ -100,7 +102,6 @@ public class Book { // implicitly inherit Object.class
     Object s3 = new Object();
     Object s4 = new Object();
     System.out.println(s3.equals(s4)); // false (Runtime: Object.equals())
-
 
   }
 }

@@ -9,6 +9,7 @@ public class DemoObject {
 
     Scanner scanner = new Scanner(System.in); // java.util.Scanner
 
+    // new object of Object.class
     Object object = new Object(); // Object is a super parent 萬能指針, 可以指任何的object
     object = "abc";
     object = Double.valueOf(13);
@@ -40,18 +41,21 @@ public class DemoObject {
     System.out.println(mc2.hashCode()); // 71832679
     System.out.println(mc3.hashCode()); // -1907721274
 
-    Object cat = new Cat();
+    Object cat = new Cat(); // it is declared by Object.class
     // cat (object reference) indeed pointing to cat object.
     // run() instance method can only be called by object declared by Cat.class
-    // if the object reference is declared by Object.class, it cannot call run()
-    // method
+    // if the object reference is declared by Object.class, it cannot call run() method
     // cat.run(); // compile error
 
     // downcast
-    Cat cat2 = (Cat) cat; // Reason why compile error: Java compiler cannot guareete 
+    Cat cat2 = (Cat) cat; 
+    // Cat cat2 = cat; // Reason why compile error: Java compiler cannot guareete the object is pointing Cat, 
+    // when the cat on the above is declared by Object.class
     cat2.run();
 
     // Cat.class inherit Object.class
+    // Object is all class's parent
+    // i.e it can call all method in Object.class
     cat2.hashCode();
     cat2.equals(cat);
   

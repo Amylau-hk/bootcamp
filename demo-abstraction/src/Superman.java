@@ -1,4 +1,6 @@
 public class Superman implements Walkable{
+
+
   @Override
   public void walk() {
 
