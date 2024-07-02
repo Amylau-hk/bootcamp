@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 // public class Book extends Object { }
-public class Book { // implicitly inherit Object.class
+public class Book1 { // implicitly inherit Object.class
   private String author;
   private LocalDate publishDate;
 
-  public Book(String author, LocalDate publishDate) {
+  public Book1(String author, LocalDate publishDate) {
     this.author = author;
     this.publishDate = publishDate;
   }
@@ -36,9 +36,9 @@ public class Book { // implicitly inherit Object.class
       return true;
     // "instanceof" is checking if the object pointing by reference is an object
     // produced by Book.class
-    if (!(obj instanceof Book))
+    if (!(obj instanceof Book1))
       return false;
-    Book book = (Book) obj; //
+    Book1 book = (Book1) obj; //
     return Objects.equals(this.author, book.getAuthor())
         && Objects.equals(this.getPublishDate(), book.getPublishDate());
     // if (book.getAuthor().equals(this.author)
@@ -49,20 +49,20 @@ public class Book { // implicitly inherit Object.class
   }
 
   public static void main(String[] args) {
-    Book b1 = new Book("John", LocalDate.of(2000, 12, 12));
-    Book b2 = new Book("John", LocalDate.of(2000, 12, 12));
+    Book1 b1 = new Book1("John", LocalDate.of(2000, 12, 12));
+    Book1 b2 = new Book1("John", LocalDate.of(2000, 12, 12));
 
     System.out.println(b1.hashCode()); // 75848450
     System.out.println(b2.hashCode()); // 75848450
 
-    Book b3 = new Book("John", LocalDate.of(2000, 12, 13));
+    Book1 b3 = new Book1("John", LocalDate.of(2000, 12, 13));
     System.out.println(b3.hashCode()); // 75848451
 
     System.out.println(b1 == b2); // false, checking object address
     // as it is new Book of b1 and b2, therefore, it is not the same object
 
     // Beacuse b1 & b2 are different objects
-    System.out.println(System.identityHashCode(b1)); // 1933863327
+    System.out.println(System.identityHashCode(b1)); // 1933863327, hash address
     System.out.println(System.identityHashCode(b2)); // 112810359
 
     // Object.class has equals() method
@@ -97,7 +97,8 @@ public class Book { // implicitly inherit Object.class
     // "Run time" determine the implementation (method content) of equals() method
     Object s1 = new String("abcd");
     Object s2 = new String("abcd");
-    System.out.println(s1.equals(s2)); // true (Runtime: String.equals())
+    System.out.println("check " +s1==s2);
+    System.out.println(s1.equals(s2)); // true (Runtime: String.equals()), checking value
 
     Object s3 = new Object();
     Object s4 = new Object();
