@@ -1,11 +1,10 @@
 package deck;
 
 public class Deck {
-  private static String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
-  private static String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
+  public static final String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
+  public static final String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
 
   // "static" belongs to class, not object
-
 
   // Player, Deck, Card
 
