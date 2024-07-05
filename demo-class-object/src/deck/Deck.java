@@ -1,22 +1,24 @@
 package deck;
 
-public class Deck {
-  public static final String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
-  public static final String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
+public class Deck{
+  // public static final String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
+  // public static final String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
+  private Suit suits;
+  private Rank ranks;
 
   // "static" belongs to class, not object
 
   // Player, Deck, Card
 
-  public static int length = suits.length * ranks.length;
+  public static int length = Suit.values().length * Rank.values().length;
 
   private Card[] cards;
 
   public Deck() {
-    this.cards = new Card[suits.length * ranks.length];
+    this.cards = new Card[Suit.values().length * Rank.values().length];
     int idx = 0;
-    for (String suit : suits) {
-      for (String rank : ranks) {
+    for (Suit suit : Suit.values()) {
+      for (Rank rank : Rank.values()) {
         this.cards[idx++] = new Card(suit, rank);
       }
     }

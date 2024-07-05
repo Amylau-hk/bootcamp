@@ -1,8 +1,8 @@
 package deck;
 
 public class Card {
-  private static String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
-  private static String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
+  // private static String[] suits = new String[] {"DIAMOND" , "CLUB", "HEART", "SPADE"};
+  // private static String[] ranks = new String[] {"ACE", "2", "3", "4", "5", "6", "7", "8", "9", "10", "JACK", "QUEEN", "KING"};
 
   // private String suit;
   // private String rank;
@@ -56,6 +56,13 @@ public class Card {
      for (Card card : deck.getCards()) {
     System.out.println(card);
     }
+
+ System.out.println(new Card(Suit.CLUB, Rank.NINE).isHigherThan(new Card(Suit.DIAMOND, Rank.JACK))); //false
+
+ System.out.println(new Card(Suit.CLUB, Rank.JACK).isHigherThan(new Card(Suit.DIAMOND, Rank.JACK))); //true
+ 
+
   }
+
 
 }
