@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class App {
+public class ArrayListDemo {
     public static void main(String[] args) throws Exception {
         Integer[] integers = new Integer[] {2, 10, -4};
         // for-each
@@ -74,9 +74,39 @@ public class App {
         strings.remove("hello"); // remove the first "hello" -> ["world", "hello"]
         System.out.println(strings); // ["world"]
 
+        // get by index: get()
+        System.out.println(strings.get(0)); // world
 
+        // Question 1: Given String[], remove those string with length <= 3
+        String[] stringArray = new String[] {"anc", "a", "", null, "aaaa"};
 
+        ArrayList<String> result = new ArrayList<>();
+        for (int i = 0; i < stringArray.length; i++){
+            if (i > 3) { 
+            result.add(stringArray[i]);
+            }
+        }
 
+        // for (String s : stringArray) {
+        //     if (s != null && s.length() > 3) {
+        //         result.add(s);
+        //     }
+        // }
+        // loop
+        System.out.println(result); // ["aaaa"]
+
+        // Question 2: Given Person[], retrieve all person object with age > 30 or name startswith "J"
+        Customer[] customers = new Customer[] {new Customer(40, "Mary") //
+        , new Customer(31, "John") //
+        , new Customer(29, "Jason") //
+        , new Customer(29, "Cindy")};
+
+        ArrayList<Customer> customerList = new ArrayList<>();
+        for (Customer c : customers) {
+            if (c.getAge() > 30 || c.getName() != null && c.getName().startsWith("J"))
+            customerList.add(c);
+        }
+        System.out.println(customerList);
 
 
 
