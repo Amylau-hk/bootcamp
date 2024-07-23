@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ArrayListDemo {
@@ -109,7 +110,16 @@ public class ArrayListDemo {
         System.out.println(customerList);
 
 
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add("abc");
+        objects.add(1);
+        objects.add(LocalDate.of(2024, 5, 22));
+        // print
+        // check if the object equals to xxx...
+        // compare the difference between ArrayList<Object> and ArrayList<String>
 
+
+        
 
 
     }

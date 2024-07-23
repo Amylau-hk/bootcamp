@@ -46,6 +46,29 @@ public class HashMapDemo {
     System.out.println(nameMap);
     System.out.println(oldValue); // Peter
 
+
+    // Contain
+    System.out.println(nameMap.containsKey(-45)); // true
+    
+    // Loop keyset()
+    for (Integer x : nameMap.keySet()) {
+      System.out.println(x);
+    }
+
+    // Loop values()
+    for (String x : nameMap.values()) {
+      System.out.println(x);
+    }
+
+    System.out.println(nameMap.size()); // 3
+
+    System.out.println(nameMap.containsValue("Oscar")); // true
+    System.out.println(nameMap.containsValue("Peter")); // false
+
+    System.out.println(nameMap.get(-45)); // null
+    
+
+
   }
   
 }
