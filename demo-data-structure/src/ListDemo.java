@@ -47,7 +47,10 @@ public class ListDemo {
     HashMap<String, String> nameList = new HashMap<>();
     nameList.put("abc", "John");
 
-    
+    HashMap<String, String> bookList = new HashMap<>();
+    nameList.put("def", "Book A");
+    maplist.add(nameList);
+    maplist.add(bookList);
 
 
   }
