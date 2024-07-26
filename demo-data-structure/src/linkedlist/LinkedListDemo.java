@@ -1,7 +1,9 @@
 package linkedlist;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class LinkedListDemo {
   public static void main(String[] args) {
@@ -51,6 +53,8 @@ public class LinkedListDemo {
     // 1. Underlying data structure
     // 2. No. of Methods Difference (i.e. LinkedList -> addFirst(), removeFirst())
 
+    // Can use List<> in the left hand side when the right is LinkedList or ArrayList
+    // However, when using List<> in the left, it cannot access all method of LinkedList or ArrayList
     LinkedList<String> ll = new LinkedList<>();
     ll.add("hello");
     ll.addFirst("abc");
@@ -64,6 +68,60 @@ public class LinkedListDemo {
     }
 
     System.out.println(ll.indexOf("hello")); // 0
+
+    ll.add("hello");
+    System.out.println(ll.lastIndexOf("hello")); // 2
+
+    // Queue.class
+    Queue<String> emails = new LinkedList<>();
+    emails.add("john@gmail.com");
+    emails.add("peter@gmail.com");
+    System.out.println(emails.size()); // Collection.class
+
+    // Poll(), poll out string will no more exist in the class
+    String head = emails.poll(); // remove and return the first element in queue
+    System.out.println(head); // john@gmail.com
+    emails.add("sally@hotmail.com");
+    emails.add("dicky@yahoo.com.hk");
+
+    String lookup = emails.peek(); // return the first element in queue 
+    System.out.println(lookup); // peter@gmail.com
+
+    // remove()
+    emails.remove(new String("dicky@yahoo.com.hk"));
+    // LinkedList.class removed(object) ->> For loop
+    
+    System.out.println(emails); // [peter@gmail.com, sally@hotmail.com]
+    emails.remove(); // same as poll()
+
+    // for-each
+    for (String s : emails) {
+      System.out.println(s);
+    }
+
+    // Queue mainly using while-loop  
+
+    // Convert Queue<String> to List<String>
+    List<String> strings4 = new ArrayList<>();
+    
+
+    while (!emails.isEmpty()) { // isEmpty()
+      // System.out.println(emails.poll());
+      strings4.add(emails.poll());
+    }
+    System.out.println(strings4);
+    System.out.println(emails); // after while loop, aa elements are removed.
+ 
+    // clear()
+    strings4.clear(); // Clear all the object inside the ArrayList object
+    strings4.add("abc"); // still can add back object into the ArrayList
+    strings4 = null; // remove the ArrayList object, unable to add object into the ArrayList
+    // strings4.add("def"); // NPE (null pointer exception)
+
+    // Queue: not expected to pick out the object in the middle of the List (LinkedList)
+    
+
+
   }
   
 }
