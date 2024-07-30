@@ -11,6 +11,9 @@ public class DSDemo {
     // ArrayList.class has Generics design.
 
     Map<String, Customer> customerMap = new HashMap<>();
+
+    // <E> must be the same type
+    // <K, V> can be the same or not the same type
   }
   
 }
