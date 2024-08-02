@@ -3,6 +3,7 @@ package sorting;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import shape.Bird;
 
@@ -20,6 +21,10 @@ public class Ball implements Comparable<Ball> {
     return this.number;
   }
 
+  public Color getColor() {
+    return this.color;
+  }
+
   @Override
   public int compareTo(Ball ball) {
     // Objectives: provide your own formula to sort the List<Ball>
@@ -28,7 +33,14 @@ public class Ball implements Comparable<Ball> {
     // Example 1: sort by number (descending)
     // You have 2 ball object reference here: ball and this
     // -1 means "move to left" (from left to right)
-    return this.number > ball.getNumber() ? -1 : 1;
+
+    if (ball != null && this.number > ball.getNumber()) 
+      return -1;
+    return 1;
+
+    // return this.number > ball.getNumber() ? -1 : 1;
+
+    // 同一時間只support一個sorting formula
   }
 
   @Override
@@ -50,7 +62,9 @@ public class Ball implements Comparable<Ball> {
     // Sort
     // Collections.sort() -> call Loop List<Ball> -> ball.compareTo()
     // During compile time, 
-    Collections.sort(balls);
+
+    // Approach 1
+    Collections.sort(balls); // O(nlogn) -> merge sort
     System.out.println(balls);
     //[Balls(Number = 14, Color =WHITE), Balls(Number = 10, Color =BLACK), Balls(Number = 8, Color =RED)]
 
@@ -58,5 +72,27 @@ public class Ball implements Comparable<Ball> {
   // Collections.sort(birds); // error, Bird.class did not implements Comparable
 
   // Sort by color? Red -> White -> Black
+    // Approach 2
+    // Comparator can adjust the formula when the situation is difference by "if else"
+    balls.add(new Ball(1000, Color.RED));
+    balls.add(new Ball(-8, Color.BLACK));
+
+    int x = 3;
+    Comparator<Ball> formula = null;
+    if (x >= 3) {
+      formula = new BallSortByColor();
+    } else {
+      // formula = new BallSortByNumber();
+    }
+
+    Collections.sort(balls, new BallSortByColor());
+    System.out.println(balls); 
+    // [Balls(Number = 1000, Color =RED), Balls(Number = 8, Color =RED), Balls(Number = 10, Color =BLACK), 
+    // Balls(Number = -8, Color =BLACK), Balls(Number = 14, Color =WHITE)]
+
+  // Sort by color and then number? RED -> White -> Black, if same color, larger number go left
+
+
+
   }
 }
