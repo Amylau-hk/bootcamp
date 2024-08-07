@@ -21,13 +21,11 @@ public void credit(double amount) {
 //   return new BusinessException(ErrorCode.INSUFF_BAL);
 // }
 
-
-
 public void debt(double amount) throws InsufficientBalanceException { // 
   if (this.balance < amount) 
     // throw new BusinessException(-99, "Withdrawal amount > Account Balance"); // checked exception
     // throw new BusinessException(ErrorCode.INSUFF_BAL);
-    throw new InsufficientBalanceException();
+    throw new InsufficientBalanceException(); // only can throw Object, not method
     // throw new IllegalArgumentException();
   this.balance -= amount;
 }
