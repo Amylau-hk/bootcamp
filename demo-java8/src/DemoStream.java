@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -29,13 +30,23 @@ public class DemoStream {
       System.out.println(strings); // [john, jenny, sam]
       System.out.println(capNames); // [JOHN, JENNY, SAM]
 
+      capNames.add("SAM");
+      System.out.println(capNames); // [JOHN, JENNY, SAM, SAM]
+
       List<String> capNames2 = capNames.stream() 
       .map(s -> {
       String newstr = s.toLowerCase() + s.toUpperCase();
       return newstr + "!!!!";
       }).collect(Collectors.toList());
-      System.out.println(capNames2); // [johnJOHN!!!!, jennyJENNY!!!!, samSAM!!!!]
+      System.out.println(capNames2); // [johnJOHN!!!!, jennyJENNY!!!!, samSAM!!!!, samSAM!!!!]
       
+      // Removed duplicate object
+      Set<String> capNames3 = capNames.stream() 
+      .map(s -> {
+      String newstr = s.toLowerCase() + s.toUpperCase();
+      return newstr + "!!!!";
+      }).collect(Collectors.toSet());
+      System.out.println(capNames3); // [johnJOHN!!!!, jennyJENNY!!!!, samSAM!!!!]
   }
   
 }
