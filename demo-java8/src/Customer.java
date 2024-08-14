@@ -33,7 +33,7 @@ public class Customer {
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(this.name);
   }
 
   @Override
