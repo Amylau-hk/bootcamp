@@ -21,6 +21,7 @@ public synchronized void increment(){
 // Solution 3 - lock a code block
 public void increment2(){
   this.k++; // multi-thread may access variable k for read/write
+  int x = 0; // it will not affect the operation of the code
   synchronized (lock) { // locked below code, the above is not locked
   this.x++;
   }
@@ -30,7 +31,6 @@ public void increment2(){
     DemoIncrement ball = new DemoIncrement();
 
     Runnable task = () -> {
-
       Thread threadInfo = Thread.currentThread(); // call current thread
       System.out.println(threadInfo.getId()); // 15, 16
       System.out.println(threadInfo.getName()); // Thread-1, Thread-0
