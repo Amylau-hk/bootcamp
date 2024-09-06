@@ -9,3 +9,6 @@
 - Java Compile-time vs Lombok
   - Java doesnt understand the meaning of "@Getter"
   - Lombok Library "tech" Java Compiler how to convert to Java code before compile
+
+  mvn dependency:tree
+  -check if the dependency exist
