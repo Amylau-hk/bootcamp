@@ -1,21 +1,33 @@
 package com.bootcamp.demojunit;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
+// !!! "static import" is for static method call.
+// !!! After "static import", you can call the static method by the method name directly.
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 import java.time.Duration;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-public class AppTest {
+public class AppTest { // can no "public", if do not neet to asscess in other workbook
+
+    // !!! After adding dependncy "junit-jupiter-params", you can use ParameterizedTest & CsvSource
+    @ParameterizedTest
+    @CsvSource({"3,1,2", "0,0,0", "-9, -11, 2"})
+    void testSum(int expected, int x, int y) {
+        assertEquals(expected, App.sum(x, y));
+    }
+
+    @DisplayName("Test App.sum()")
     @Test
     void testSum() {
     assertEquals(5, App.sum(3, 2));
@@ -30,6 +42,7 @@ public class AppTest {
     assertEquals(14, App.sum(8, 6));
     }
 
+    @DisplayName("Test App.subtract()")
     @Test
     void testSubtract() {
         assertEquals(5, App.subtract(7, 2));
@@ -40,6 +53,7 @@ public class AppTest {
     }
 
     // x >= 10 && y >= 3
+    @DisplayName("Test App.combine()")
     @Test 
     void testCombine() {
         // Scenario 1: x >= 10 and y >= 3 -> subreact()
@@ -77,6 +91,7 @@ public class AppTest {
         App.divide(10, 0);
     });
 
+    // !!! Common
      assertDoesNotThrow(()-> {
         App.divide(10, 1);
      });
@@ -101,7 +116,7 @@ public class AppTest {
     // Non-functional requirement
     @Test
     void testTimeout() {
-        assertTimeout(Duration.ofMillis(100), () -> {
+        assertTimeout(Duration.ofMillis(200), () -> {
             // Normally, you write the logic here to test....
             Thread.sleep(90);
         });
