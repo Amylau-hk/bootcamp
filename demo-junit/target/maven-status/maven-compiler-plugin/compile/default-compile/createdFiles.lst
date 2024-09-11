@@ -1,1 +1,5 @@
 com\bootcamp\demojunit\App.class
+com\bootcamp\demojunit\IntegerOperationManager.class
+com\bootcamp\demojunit\Dog.class
+com\bootcamp\demojunit\Animal.class
+com\bootcamp\demojunit\Cat.class
