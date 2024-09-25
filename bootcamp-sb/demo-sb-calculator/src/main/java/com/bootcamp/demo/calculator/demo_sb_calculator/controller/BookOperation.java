@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.bootcamp.demo.calculator.demo_sb_calculator.model.Bag;
 import com.bootcamp.demo.calculator.demo_sb_calculator.model.Book;
 
 public interface BookOperation {
@@ -33,4 +34,7 @@ public interface BookOperation {
   // return Book[]
   @GetMapping(value = "/bookarray")
   public Book[] getBookArray();
+
+  @GetMapping(value = "/bag")
+  public Bag getBag();
 }

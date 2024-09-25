@@ -5,12 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class Book {
-  private int id;
-  private double price;
-  private List<String> strings; //dummy data
+public class ShoppingMall {
+  private String name;
+  private int area;
+  private Cinema cinema;
   
+
+  private List<String> shopCategory;
 }
