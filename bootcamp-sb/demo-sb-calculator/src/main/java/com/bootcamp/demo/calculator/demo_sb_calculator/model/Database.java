@@ -13,6 +13,10 @@ public class Database {
     return strings.length;
   }
 
+  public static String[] getString() {
+    return strings;
+  }
+
   public static String addString(String newString) {
       String[] newArray = Arrays.copyOf(strings, strings.length + 1);
       newArray[newArray.length - 1] = newString;
